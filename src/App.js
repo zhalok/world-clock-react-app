@@ -18,6 +18,9 @@ function App() {
 
 	return (
 		<div className='App' style={{ marginTop: '100px' }}>
+			<div>
+				<h1>World Clock</h1>
+			</div>
 			<TimeZoneList timezone={timezone} setTimezone={setTimezone} />
 
 			<A_Clock curTime={curTime} />
