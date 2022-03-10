@@ -30,7 +30,9 @@ export default function TimeZoneList({ setTimezone }) {
 		{ id: 112, country: 'Sweden', tz: 'Europe/Stockholm' },
 	];
 	const [selectedTimezone, setSelectedTimezone] = useState('');
+
 	useEffect(() => {
+		list_of_timezones.sort((a, b) => a.country - b.country);
 		setSelectedTimezone('Europe/Stockholm');
 	}, []);
 	return (
