@@ -27,10 +27,11 @@ export default function TimeZoneList({ setTimezone }) {
 		{ id: 116, country: 'Chicago', tz: 'America/Chicago' },
 		{ id: 124, country: 'Los_Angeles', tz: 'America/Los_Angeles' },
 		{ id: 112, country: 'Petersburg', tz: 'America/Indiana/Petersburg' },
+		{ id: 112, country: 'Sweden', tz: 'Europe/Stockholm' },
 	];
 	const [selectedTimezone, setSelectedTimezone] = useState('');
 	useEffect(() => {
-		setSelectedTimezone('Asia/Dhaka');
+		setSelectedTimezone('Europe/Stockholm');
 	}, []);
 	return (
 		<div style={{ width: '500px', marginLeft: 'auto', marginRight: 'auto' }}>
