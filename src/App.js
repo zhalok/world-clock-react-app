@@ -33,8 +33,8 @@ function App() {
 			<DigitalClock curTime={curTime} />
 
 			<RefreshButton setCurTime={setCurTime} timeZone={timezone} />
-			<div>
-				<img src='/images/kolkata.jpeg' width='500px' height='500px' />
+			<div style={{ marginTop: '20px' }}>
+				<img src={`images/${imgSource}`} width='500px' height='300px' />
 			</div>
 		</div>
 	);

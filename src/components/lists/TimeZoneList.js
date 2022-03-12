@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function TimeZoneList({ setTimezone, setImage }) {
+export default function TimeZoneList({ setTimezone, setImgSource }) {
 	const list_of_timezones = [
 		{ id: 1, country: 'Dubai', tz: 'Asia/Dubai', image: 'dubai.jpg' },
 		{ id: 5, country: 'Dhaka', tz: 'Asia/Dhaka', image: '' },
@@ -52,9 +52,8 @@ export default function TimeZoneList({ setTimezone, setImage }) {
 						label='Time Zones'
 						value={selectedTimezone}
 						onChange={(e) => {
-							// console.log(list_of_timezones[e.target.value]);
 							setTimezone(list_of_timezones[e.target.value].tz);
-
+							setImgSource(list_of_timezones[e.target.value].image);
 							setSelectedTimezone(e.target.value);
 							console.log(list_of_timezones[e.target.value]);
 							console.log(selectedTimezone);
