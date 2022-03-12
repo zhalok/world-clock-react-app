@@ -112,8 +112,6 @@ export default function TimeZoneList({ setTimezone, setImgSource }) {
 							setTimezone(list_of_timezones[e.target.value].tz);
 							setImgSource(list_of_timezones[e.target.value].image);
 							setSelectedTimezone(e.target.value);
-							console.log(list_of_timezones[e.target.value]);
-							console.log(selectedTimezone);
 						}}
 					>
 						{list_of_timezones.map((e, index) => (
