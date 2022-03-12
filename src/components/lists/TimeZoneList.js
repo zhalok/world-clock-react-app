@@ -5,12 +5,17 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function TimeZoneList({ setTimezone }) {
+export default function TimeZoneList({ setTimezone, setImage }) {
 	const list_of_timezones = [
-		{ id: 1, country: 'Dubai', tz: 'Asia/Dubai' },
-		{ id: 5, country: 'Dhaka', tz: 'Asia/Dhaka' },
-		{ id: 8, country: 'Shanghai', tz: 'Asia/Shanghai' },
-		{ id: 13, country: 'Hong_Kong', tz: 'Asia/Hong_Kong' },
+		{ id: 1, country: 'Dubai', tz: 'Asia/Dubai', image: 'dubai.jpg' },
+		{ id: 5, country: 'Dhaka', tz: 'Asia/Dhaka', image: '' },
+		{ id: 8, country: 'Shanghai', tz: 'Asia/Shanghai', image: 'shanghai.jpg' },
+		{
+			id: 13,
+			country: 'Hong_Kong',
+			tz: 'Asia/Hong_Kong',
+			image: 'hongkong.jpg',
+		},
 		{ id: 18, country: 'Jerusalem', tz: 'Asia/Jerusalem' },
 		{ id: 19, country: 'Kolkata', tz: 'Asia/Kolkata' },
 		{ id: 20, country: 'Baghdad', tz: 'Asia/Baghdad' },
@@ -32,8 +37,9 @@ export default function TimeZoneList({ setTimezone }) {
 	const [selectedTimezone, setSelectedTimezone] = useState('');
 
 	useEffect(() => {
-		list_of_timezones.sort((a, b) => a.country - b.country);
-		setSelectedTimezone('Europe/Stockholm');
+		// list_of_timezones.sort((a, b) => a.country - b.country);
+		setSelectedTimezone(20);
+		// console.log();
 	}, []);
 	return (
 		<div style={{ width: '500px', marginLeft: 'auto', marginRight: 'auto' }}>
@@ -46,13 +52,16 @@ export default function TimeZoneList({ setTimezone }) {
 						label='Time Zones'
 						value={selectedTimezone}
 						onChange={(e) => {
-							// console.log(e.target.value);
-							setTimezone(e.target.value);
+							// console.log(list_of_timezones[e.target.value]);
+							setTimezone(list_of_timezones[e.target.value].tz);
+
 							setSelectedTimezone(e.target.value);
+							console.log(list_of_timezones[e.target.value]);
+							console.log(selectedTimezone);
 						}}
 					>
 						{list_of_timezones.map((e, index) => (
-							<MenuItem key={index} value={e.tz}>
+							<MenuItem key={index} value={index}>
 								{e.country}
 							</MenuItem>
 						))}

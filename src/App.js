@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+// import img from './images/';
 import { useEffect, useState } from 'react';
 import TimeZoneList from './components/lists/TimeZoneList';
 import RefreshButton from './components/Buttons/Refresh';
@@ -9,6 +10,7 @@ import DigitalClock from './components/clocks/DigitalClock';
 function App() {
 	const [curTime, setCurTime] = useState('');
 	const [timezone, setTimezone] = useState('Asia/Dhaka');
+	const [imgSource, setImgSource] = useState('');
 	useEffect(() => {
 		setTimezone('Asia/Dhaka');
 	}, []);
@@ -21,12 +23,19 @@ function App() {
 			<div>
 				<h1>World Clock</h1>
 			</div>
-			<TimeZoneList timezone={timezone} setTimezone={setTimezone} />
+			<TimeZoneList
+				timezone={timezone}
+				setTimezone={setTimezone}
+				setImgSource={setImgSource}
+			/>
 
 			<A_Clock curTime={curTime} />
 			<DigitalClock curTime={curTime} />
 
 			<RefreshButton setCurTime={setCurTime} timeZone={timezone} />
+			<div>
+				<img src='/images/kolkata.jpeg' width='500px' height='500px' />
+			</div>
 		</div>
 	);
 }
