@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 export default function TimeZoneList({ setTimezone, setImgSource }) {
 	const list_of_timezones = [
 		{ id: 1, country: 'Dubai', tz: 'Asia/Dubai', image: 'dubai.jpg' },
-		{ id: 5, country: 'Dhaka', tz: 'Asia/Dhaka', image: '' },
+		{ id: 5, country: 'Toronto', tz: 'America/Toronto', image: 'toronto.jpeg' },
 		{ id: 8, country: 'Shanghai', tz: 'Asia/Shanghai', image: 'shanghai.jpg' },
 		{
 			id: 13,
@@ -16,29 +16,86 @@ export default function TimeZoneList({ setTimezone, setImgSource }) {
 			tz: 'Asia/Hong_Kong',
 			image: 'hongkong.jpg',
 		},
-		{ id: 18, country: 'Jerusalem', tz: 'Asia/Jerusalem' },
-		{ id: 19, country: 'Kolkata', tz: 'Asia/Kolkata' },
-		{ id: 20, country: 'Baghdad', tz: 'Asia/Baghdad' },
-		{ id: 21, country: 'Tehran', tz: 'Asia/Tehran' },
-		{ id: 23, country: 'Tokyo', tz: 'Asia/Tokyo' },
-		{ id: 35, country: 'Colombo', tz: 'Asia/Colombo' },
-		{ id: 46, country: 'Kathmandu', tz: 'Asia/Kathmandu' },
-		{ id: 35, country: 'Moscow', tz: 'Europe/Moscow' },
-		{ id: 44, country: 'Istanbul', tz: 'Europe/Istanbul' },
-		{ id: 62, country: 'Costa_Rica', tz: 'America/Costa_Rica' },
-		{ id: 82, country: 'Mexico_City', tz: 'America/Mexico_City' },
-		{ id: 98, country: 'Puerto_Rico', tz: 'America/Puerto_Rico' },
-		{ id: 104, country: 'New_York', tz: 'America/New_York' },
-		{ id: 116, country: 'Chicago', tz: 'America/Chicago' },
-		{ id: 124, country: 'Los_Angeles', tz: 'America/Los_Angeles' },
-		{ id: 112, country: 'Petersburg', tz: 'America/Indiana/Petersburg' },
-		{ id: 112, country: 'Sweden', tz: 'Europe/Stockholm' },
+		{
+			id: 18,
+			country: 'Jerusalem',
+			tz: 'Asia/Jerusalem',
+			image: 'jerusalem.jpg',
+		},
+		{ id: 19, country: 'Kolkata', tz: 'Asia/Kolkata', image: 'kolkata.jpg' },
+		{ id: 20, country: 'Baghdad', tz: 'Asia/Baghdad', image: 'Baghdad.jpeg' },
+		{ id: 21, country: 'Tehran', tz: 'Asia/Tehran', image: 'tehran.png' },
+		{ id: 23, country: 'Tokyo', tz: 'Asia/Tokyo', image: 'tokyo.jpeg' },
+		{ id: 35, country: 'Colombo', tz: 'Asia/Colombo', image: 'colombo.jpeg' },
+		{
+			id: 46,
+			country: 'Kathmandu',
+			tz: 'Asia/Kathmandu',
+			image: 'kathmandu.jpg',
+		},
+		{ id: 35, country: 'Moscow', tz: 'Europe/Moscow', image: 'moscow.jpg' },
+		{
+			id: 44,
+			country: 'Istanbul',
+			tz: 'Europe/Istanbul',
+			image: 'istanbul.jpg',
+		},
+		{
+			id: 62,
+			country: 'Costa_Rica',
+			tz: 'America/Costa_Rica',
+			image: 'costarica.jpg',
+		},
+		{
+			id: 82,
+			country: 'Mexico_City',
+			tz: 'America/Mexico_City',
+			image: 'mexico.jpeg',
+		},
+		{
+			id: 98,
+			country: 'Puerto_Rico',
+			tz: 'America/Puerto_Rico',
+			image: 'Puerto_Rico.jpg',
+		},
+		{
+			id: 104,
+			country: 'New_York',
+			tz: 'America/New_York',
+			image: 'New_York.jpeg',
+		},
+		{
+			id: 116,
+			country: 'Chicago',
+			tz: 'America/Chicago',
+			image: 'Chicago.jpeg',
+		},
+		{
+			id: 124,
+			country: 'Los_Angeles',
+			tz: 'America/Los_Angeles',
+			image: 'Los_Angeles.jpg',
+		},
+		{
+			id: 112,
+			country: 'Petersburg',
+			tz: 'America/Indiana/Petersburg',
+			image: 'Petersburg.jpeg',
+		},
+		{
+			id: 112,
+			country: 'Sweden',
+			tz: 'Europe/Stockholm',
+			image: 'Stockholm.jpg',
+		},
 	];
 	const [selectedTimezone, setSelectedTimezone] = useState('');
 
 	useEffect(() => {
 		// list_of_timezones.sort((a, b) => a.country - b.country);
 		setSelectedTimezone(20);
+		setTimezone('Europe/Stockholm');
+		setImgSource('Stockholm.jpg');
 		// console.log();
 	}, []);
 	return (

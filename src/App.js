@@ -9,17 +9,15 @@ import DigitalClock from './components/clocks/DigitalClock';
 
 function App() {
 	const [curTime, setCurTime] = useState('');
-	const [timezone, setTimezone] = useState('Asia/Dhaka');
+	const [timezone, setTimezone] = useState('Europe/Stockholm');
 	const [imgSource, setImgSource] = useState('');
-	useEffect(() => {
-		setTimezone('Asia/Dhaka');
-	}, []);
+
 	useEffect(() => {
 		setCurTime(new Date().toLocaleTimeString('en-US', { timeZone: timezone }));
 	}, [timezone]);
 
 	return (
-		<div className='App' style={{ marginTop: '100px' }}>
+		<div className='App' style={{ marginTop: '20px' }}>
 			<div>
 				<h1>World Clock</h1>
 			</div>
